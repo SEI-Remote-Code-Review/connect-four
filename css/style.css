@@ -1,13 +1,111 @@
-.container {
-  justify-content: center;
-  align-items: center;
-  margin: auto auto auto auto;
-  border: thick;
+body {
+  --body-bg: lightgray;
+  --grid-bg: white;
+  --text-color: black;
+  --light-n-dark-btn-content: "Dark Mode";
+  --light-n-dark-btn-bg: white;
+  --light-n-dark-text-clr: black;
+  display: grid;
+  background-color: var(--body-bg);
+  height: 100vh;
+  color: var(--text-color);
 }
 
-div {
-  border: 3px solid blue;
-  font-size: 8vmin;
-  text-align: center;
-  vertical-align: middle;
+body.dark {
+  --body-bg: black;
+  --grid-bg: gray;
+  --text-color: gray;
+  --light-n-dark-btn-content: "Light Mode";
+  --light-n-dark-btn-bg: gray;
+  --light-n-dark-text-clr: white;
 }
+
+.container {
+  display: grid; 
+  grid-template-columns: repeat(7, 1fr); 
+  grid-template-rows: repeat(6, 1fr);
+  width: 600px;
+  height: 500px;
+  margin-bottom: 25px;
+  padding: 0;
+  border: 8px solid blue;
+  background-color: blue;
+  box-shadow: 10px 10px rgb(0 0 0 / 0.5);
+}
+
+.grid-area {
+  display: flex;
+  border: 9px solid blue;
+  padding: 30px;
+  border-radius: 50%;
+  background-color: var(--grid-bg);
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Rowdies', cursive;
+  font-size: 100px;
+  color: red;
+  margin: 0;
+  text-shadow: 10px 10px rgb(0 0 0 / 0.5);
+  
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Rowdies', cursive;
+  font-size: 40px;
+  margin: 0;
+}
+
+#reset-game {
+  display: flex;
+  width: 60px;
+  height: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+}
+
+#lightNDark {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 70px;
+  height: 40px;
+  background-color: var(--light-n-dark-btn-bg);
+  color: var(--light-n-dark-text-clr);
+}
+
+#lightNDark::after {
+  color: var(--light-n-dark-text-clr);
+  content: var(--light-n-dark-btn-content);
+}
+
+#reset-game {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  background-color: whitesmoke;
+}
+
+.player1 {
+  color: red;
+}
+
+.player2 {
+  color: rgb(253, 253, 17);
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 1.5rem;
+    width: 900px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
